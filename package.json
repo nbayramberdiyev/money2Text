@@ -1,0 +1,44 @@
+{
+    "name": "money2text",
+    "version": "1.0.0",
+    "description": "money2Text (tam veya ondalık) sayıyı parasal yazı formatına çeviren ufak bir JavaScript kütüphanesidir.",
+    "main": "dist/money2Text.js",
+    "browser": "dist/money2Text.min.js",
+    "module": "src/index.js",
+    "scripts": {
+        "dev": "webpack --mode=development",
+        "build": "webpack --mode=production",
+        "bundle": "npm run dev && npm run build",
+        "test": "jest --verbose"
+    },
+    "keywords": [
+        "currency",
+        "money",
+        "monetary",
+        "number",
+        "numeric",
+        "format",
+        "convert",
+        "digits",
+        "words"
+    ],
+    "author": "N'Bayramberdiyev",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/preset-env": "^7.10.4",
+        "babel-loader": "^8.1.0",
+        "jest": "^26.1.0",
+        "prettier": "2.0.5",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.12"
+    },
+    "homepage": "https://github.com/nbayramberdiyev/money2Text",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nbayramberdiyev/money2Text.git"
+    },
+    "bugs": {
+        "url": "https://github.com/nbayramberdiyev/money2Text/issues"
+    }
+}

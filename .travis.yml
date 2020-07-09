@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - node
+  - 12
+  - 10
+script:
+  - npm run bundle
+deploy:
+  provider: npm
+  email: ${NPM_EMAIL}
+  api_key: ${NPM_TOKEN}
+  on:
+    tags: true
+    repo: nbayramberdiyev/money2Text
+  skip_cleanup: true
