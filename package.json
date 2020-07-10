@@ -1,6 +1,6 @@
 {
     "name": "money2text",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "money2Text (tam veya ondalık) sayıyı parasal yazı formatına çeviren ufak bir JavaScript kütüphanesidir.",
     "main": "dist/money2Text.js",
     "browser": "dist/money2Text.min.js",
