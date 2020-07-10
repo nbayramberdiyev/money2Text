@@ -7,7 +7,7 @@ money2Text (tam veya ondalık) sayıyı parasal yazı formatına çeviren ufak b
 ### CDN
 
 ```html
-<script src="https://unpkg.com/money2Text"></script>
+<script src="https://unpkg.com/money2text"></script>
 ```
 
 ### NPM
