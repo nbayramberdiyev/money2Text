@@ -13,7 +13,7 @@ money2Text (tam veya ondalık) sayıyı parasal yazı formatına çeviren ufak b
 ### NPM
 
 ```sh
-npm i money2Text
+npm i money2text
 ```
 
 ## Kullanım
@@ -25,9 +25,9 @@ Yukarıda belirtildiği gibi kütüphaneyi CDN üzerinden veya alternatif olarak
 ### Modül Olarak
 
 ```javascript
-const money2Text = require('money2Text')
+const money2Text = require('money2text')
 // veya
-import money2Text from 'money2Text'
+import money2Text from 'money2text'
 ```
 
 ## API
