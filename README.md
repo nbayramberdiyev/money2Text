@@ -18,7 +18,7 @@ npm i money2text
 
 ## Kullanım
 
-### Tarayıcada
+### Tarayıcıda
 
 Yukarıda belirtildiği gibi kütüphaneyi CDN üzerinden veya alternatif olarak `money2Text.min.js` dosyasını projenize dahil etmeniz yeterli olacaktır. Başka herhangi bir dosya veya kütüphaneye bağımlılığı yoktur.
 
@@ -39,11 +39,13 @@ money2Text(sayı [, seçenekler])
 ### sayı:
 
 Tipi: `number|string`
+
 Belirtmek zorunlu olup integer, float, string tipinde olabilir. Geçerli sayı aralığı ise 0-999999999999.99'dur. Yani bir trilyondan küçük sayılar desteklenmektedir. İsteğe bağlı olarak formatlanmış veya formatlanmamış olabilir ancak sayı formatlanmış ise geçerli format olmak zorundadır.
 
 ### seçenekler:
 
 Tipi: `Object`
+
 Belirtmek zorunlu olmayıp, girdiyi ve çıktıyı özelleştirmemizi sağlar. Eğer belirtilecekse key/value şeklinde obje olarak belirtilmelidir. Aşağıda detaylı olarak açıklanmıştır.
 
 ## Seçenekler
