@@ -14,13 +14,13 @@ import { convertToFloatBasedOnSeparator, extractNumberParts, trimWhitespaces } f
 export default function money2Text(money, options = null) {
     const defaults = {
         separator: ',',
-        lira: 'Türk Lirası',
-        kurus: 'Kuruş',
+        currency: 'Türk Lirası',
+        penny: 'Kuruş',
     }
     const opts = { ...defaults, ...options }
 
-    const birlikler = ['', 'Bir', 'İki', 'Üç', 'Dört', 'Beş', 'Altı', 'Yedi', 'Sekiz', 'Dokuz']
-    const onluklar = ['', 'On', 'Yirmi', 'Otuz', 'Kırk', 'Elli', 'Altmış', 'Yetmiş', 'Seksen', 'Doksan']
+    const troopsNumbers = ['', 'Bir', 'İki', 'Üç', 'Dört', 'Beş', 'Altı', 'Yedi', 'Sekiz', 'Dokuz']
+    const tensNumbers = ['', 'On', 'Yirmi', 'Otuz', 'Kırk', 'Elli', 'Altmış', 'Yetmiş', 'Seksen', 'Doksan']
 
     const billions = (num) => {
         if (num < 1e9) {
@@ -57,19 +57,19 @@ export default function money2Text(money, options = null) {
             return `Yüz ${tens(num % 100)}`
         }
 
-        return `${birlikler[Math.floor(num / 100)]} Yüz ${tens(num % 100)}`
+        return `${troopsNumbers[Math.floor(num / 100)]} Yüz ${tens(num % 100)}`
     }
 
     const tens = (num) => {
         if (num < 10) {
-            return birlikler[num]
+            return troopsNumbers[num]
         }
 
         if (num % 10 === 0) {
-            return onluklar[Math.floor(num / 10)]
+            return tensNumbers[Math.floor(num / 10)]
         }
 
-        return `${onluklar[Math.floor(num / 10)]} ${birlikler[num % 10]} `
+        return `${tensNumbers[Math.floor(num / 10)]} ${troopsNumbers[num % 10]} `
     }
 
     if (!isValidSeparator(opts.separator)) {
@@ -93,7 +93,7 @@ export default function money2Text(money, options = null) {
     }
 
     if (number === 0) {
-        return `Sıfır ${opts.lira}`
+        return `Sıfır ${opts.currency}`
     }
 
     const { wholeNumberPart, decimalPart } = extractNumberParts(number)
@@ -101,11 +101,11 @@ export default function money2Text(money, options = null) {
     let text = ''
 
     if (wholeNumberPart > 0) {
-        text += `${billions(wholeNumberPart)} ${opts.lira}`
+        text += `${billions(wholeNumberPart)} ${opts.currency}`
     }
 
     if (decimalPart > 0) {
-        text += ` ${tens(decimalPart)} ${opts.kurus}`
+        text += ` ${tens(decimalPart)} ${opts.penny}`
     }
 
     return trimWhitespaces(text)

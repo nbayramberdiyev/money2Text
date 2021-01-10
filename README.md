@@ -53,8 +53,8 @@ Belirtmek zorunlu olmayıp, girdiyi ve çıktıyı özelleştirmemizi sağlar. E
 |   Seçenek   |                                              Açıklama                                               | Varsayılan Değer |
 | :---------: | :-------------------------------------------------------------------------------------------------: | :--------------: |
 | `separator` | Sayıdaki ondalık kısmı hangi karakter ile ayırmak istediğinizi belirtir. Geçerli değerler: `,`, `.` |       `,`        |
-|   `lira`    |                            Sayının tam kısmının para birimini belirtir.                             |  `Türk Lirası`   |
-|   `kurus`   |                          Sayının ondalık kısmının para birimini belirtir.                           |     `Kuruş`      |
+| `currency`  |                            Sayının tam kısmının para birimini belirtir.                             |  `Türk Lirası`   |
+|   `penny`   |                          Sayının ondalık kısmının para birimini belirtir.                           |     `Kuruş`      |
 
 ## Örnekler
 
@@ -63,9 +63,9 @@ money2Text('12,34') // On İki Türk Lirası Otuz Dört Kuruş
 
 money2Text('12.34', { separator: '.' }) // On İki Türk Lirası Otuz Dört Kuruş
 
-money2Text('12,34', { lira: 'TL' }) // On İki TL Otuz Dört Kuruş
+money2Text('12,34', { currency: 'TL' }) // On İki TL Otuz Dört Kuruş
 
-money2Text('12.34', { separator: '.', lira: 'TL', kurus: 'Krş.' }) // On İki TL Otuz Dört Krş.
+money2Text('12.34', { separator: '.', currency: 'TL', penny: 'Krş.' }) // On İki TL Otuz Dört Krş.
 
 money2Text('12,34', { separator: '_' }) // Error: Ayraç, virgül (,) veya nokta (.) olmalıdır.
 
@@ -75,6 +75,10 @@ money2Text('1,23,45') // Error: Sayı veya formatı geçerli değil.
 
 money2Text(1000000000000) // RangeError: Bir trilyon ve üstü sayılar (şimdilik) desteklenmemektedir.
 ```
+
+## To Do
+- [ ] İngilizce döküman eklenecek.
+- [ ] Verilen hatalara İngilizce dil desteği eklenecek.
 
 ## License
 
